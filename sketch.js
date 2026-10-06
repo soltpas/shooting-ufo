@@ -34,6 +34,7 @@ function draw() {
             image(ui,ux[i]-a,uy[i],us[i],us[i]);
             if (uz[i] <= 0){
                 d += 1;
+                ul = false;
             }
         }
     }
