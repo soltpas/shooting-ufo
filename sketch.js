@@ -88,7 +88,8 @@ function draw() {
     }
     textSize(50);
     fill("red");
-    text("弾数:" + (30 - bc),10,50);
+    text("BULLET:" + (30 - bc),10,50);
+    text("LIFE:" + (10 - d),10,100);
 }
 
 function keyPressed() {
