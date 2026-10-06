@@ -14,6 +14,7 @@ let st = 0;
 let r;
 let rr = false;
 let a = 0;
+let d;
 
 function preload() {
     ui = loadImage("ufo.png");
@@ -32,7 +33,7 @@ function draw() {
             us[i] = 500 - uz[i];
             image(ui,ux[i]-a,uy[i],us[i],us[i]);
             if (uz[i] <= 0){
-                ul[i] = false;
+                d += 1;
             }
         }
     }
