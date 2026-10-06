@@ -58,10 +58,10 @@ function draw() {
         if (ul[i] == true){
             for (let j = 0;j < bl.length;j++){
                 if (bl[j] == true &&
-                    bx[j] - a - ux[i] <= us[i] + 10 &&
-                    bx[j] - a - ux[i] >= -us[i] - 10 &&
-                    by[j] - uy[i] <= us[i] + 10 &&
-                    by[j] - uy[i] >= -us[i] - 10 && bz[j] - uz[i] <= 10 && bz[j] + uz[i] >= 10){
+                    bx[j] - a - ux[i] <= us[i] &&
+                    bx[j] - a - ux[i] >= -us[i] &&
+                    by[j] - uy[i] <= us[i] &&
+                    by[j] - uy[i] >= -us[i] && bz[j] - uz[i] <= 10 && bz[j] - uz[i] >= 10){
                     ul[i] = false;
                     bl[j] = false;
                     break;
