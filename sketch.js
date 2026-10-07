@@ -14,7 +14,7 @@ let st = 0;
 let r;
 let rr = false;
 let a = 0;
-let d;
+let d = 0;
 
 function preload() {
     ui = loadImage("ufo.png");
@@ -34,21 +34,20 @@ function draw() {
             image(ui,ux[i]-a,uy[i],us[i],us[i]);
             if (uz[i] <= 0){
                 d += 1;
-                ul = false;
+                ul[i] = false;
             }
         }
     }
     for (let i = 0;i < bl.length;i++){
         if (bl[i] == true){
             bz[i] += 1;
-            bs[i] = (500 - bz[i]*10) // 5;
-            if (bz[i] >= 50){
-                by[i] += 0.5;
+            if (bz[i] >= 30){
+                by[i] += 1;
             }
             noStroke();
             fill("red");
-            circle(bx[i] - a,by[i],bs[i])
-            if (bs[i] <= 0){
+            circle(bx[i] - a,by[i],500 - (bz[i] * 10))
+            if (bz[i] >= 50){
                 bl[i] = false;
                 bz[i] = 0;
             }
@@ -58,10 +57,10 @@ function draw() {
         if (ul[i] == true){
             for (let j = 0;j < bl.length;j++){
                 if (bl[j] == true &&
-                    bx[j] - a - ux[i] <= us[i] &&
-                    bx[j] - a - ux[i] >= -us[i] &&
+                    bx[j] - ux[i] <= us[i] &&
+                    bx[j] - ux[i] >= -us[i] &&
                     by[j] - uy[i] <= us[i] &&
-                    by[j] - uy[i] >= -us[i] && bs[j] * 5 - us[i] <= 10 && bs[j] * 5 - us[i] >= 10){
+                    by[j] - uy[i] >= -us[i] && bz[j] >= 45 ){
                     ul[i] = false;
                     bl[j] = false;
                     break;
