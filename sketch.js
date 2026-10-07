@@ -61,7 +61,7 @@ function draw() {
                     bx[j] - a - ux[i] <= us[i] &&
                     bx[j] - a - ux[i] >= -us[i] &&
                     by[j] - uy[i] <= us[i] &&
-                    by[j] - uy[i] >= -us[i] && bz[j] - uz[i] <= 10 && bz[j] - uz[i] >= 10){
+                    by[j] - uy[i] >= -us[i] && bs[j] * 5 - us[i] <= 10 && bs[j] * 5 - us[i] >= 10){
                     ul[i] = false;
                     bl[j] = false;
                     break;
